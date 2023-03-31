@@ -1,0 +1,35 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+
+	<center>
+{#		<h2>Request manage</h2>#}
+		<form method="post">
+        {% csrf_token %}
+			<table border="2">
+              <tr><th align="center" colspan="5"><h2 align="center" style="color: black" >Manage Request</h2></th><br></tr>
+
+				<tr>
+					        <th align="center" style="color:black;border: solid;background: white ">username</th>
+					        <th align="center" style="color:black;border: solid;background: white ">address</th>
+{#				        <th align="center" style="color:black;border: solid;background: white ">Location</th>#}
+					        <th align="center" style="color:black;border: solid;background: white ">Request</th>
+					        <th align="center" style="color:black;border: solid;background: white "></td>
+					        <th align="center" style="color:black;border: solid;background: white "></td>
+				</tr>
+                {% for x in value %}
+				<tr>
+					    <td style="border: solid;color: black">{{ x.u.username }}</td>
+					    <td style="border: solid;color: black">{{ x.u.address }}</td>
+{#					    <td style="border: solid;color: black">{{ x.location }}</td>#}
+					    <td style="border: solid;color: black">{{ x.request }}</td>
+					    <td style="border: solid;color: black"><a href="{% url 'accrequest' idd=x.r_id %}">Accept</a></td>
+					    <td style="border: solid;color: black"><a href="{% url 'rejectrequest' idd=x.r_id %}">Reject</a></td>
+
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+		
+	</center>
+
+{% endblock %}

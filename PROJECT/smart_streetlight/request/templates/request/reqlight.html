@@ -1,0 +1,12 @@
+{% extends 'temp/userhome.html' %}
+{% block base %}
+	<center>
+		<form method="post">
+            {% csrf_token %}
+			Request light<BR>
+			<textarea name="lightlocation" style="color: black"></textarea><br>
+			<input type="submit" name="submitrequest" style="color: black">
+		</form>
+	</center>
+
+{% endblock %}

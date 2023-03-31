@@ -1,0 +1,24 @@
+{% extends 'temp/userhome.html' %}
+{% block base %}
+	<center>
+		<h2> Status from Authority</h2>
+		<form>
+			<table border="1">
+             <tr><th align="center" colspan="5"><h2 align="center" style="color: white" >Status</h2></th><br>
+
+                </tr>
+				<tr>
+                    <th align="center" style="color:black;border: solid;background: white ">request</th>
+				<th align="center" style="color:black;border: solid;background: white ">status</th>
+				</tr>
+                {% for x in value %}
+				<tr>
+                    <td style="border: solid;color: black">{{ x.request }}</td>
+					<td style="border: solid;color: black">{{ x.status }}</td>
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

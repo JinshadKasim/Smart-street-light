@@ -1,0 +1,28 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+
+	<form method="POST">
+        {% csrf_token %}
+
+        <table align="center" style="alignment: center">
+            <tr><th align="center" colspan="2"><h2 align="center" style="color: black" >Register light</h2></th><br></tr>
+
+            <tr>
+		<th  style="color:black;background: white ">location</th>
+                <td><textarea name="location" style="color: black"></textarea><br></td>
+            </tr>
+            <tr>
+               <th align="center" style="color:black;background: white ">latitude</th>
+                <td><input type="text" name="Latitude" style="color: black"></td>
+            </tr>
+            <tr>
+                <th align="center" style="color:black;background: white ">longitude</th>
+                <td><input type="text" name="Longitude" style="color: black"></td>
+            </tr>
+
+        </table>
+        <input type="submit" value="ADD" required="" style="color: black">
+	</form>
+</center>
+
+{% endblock %}

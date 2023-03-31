@@ -1,0 +1,60 @@
+{% extends 'temp/adminhome.html' %}
+{% block base %}
+	<center>
+	<FORM method="post">
+        {% csrf_token %}
+{#        <h3>AUTHORITY REGISTRATION</h3>#}
+        {% for i in ok %}
+		<table>
+               <tr><th align="center" colspan="5"><h2 align="center" style="color: white" >Update Authority</h2></th><br></tr>
+
+				<tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Name
+				</th>
+				<td>	<input type="text" name="authorityname" required="" style="color: black;font-style: normal" value="{{ i.username }}">
+				</td>
+			</tr>
+            <tr>
+				<th align="center" style="color:black;background: white ">
+					Location
+				</th>
+				<td>	<input type="text" name="location" required="" style="color: black;font-style: normal" value="{{ i.location }}">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Contact Number
+				</th>
+				<td>
+						<input type="text" name="authoritynumber" required="" style="color: black;font-style: normal" value="{{ i.contact_no }}">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					E-mail
+				</th>
+				<td>
+						<input type="email" name="authorityemail" required="" style="color: black;font-style: normal" value="{{ i.email }}">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Password
+				</th>
+				<td>
+					<input type="password" name="authoritypassword" required="" style="color: black" value="{{ i.password }}">
+				</td>
+			</tr>
+			
+		</table>
+        {% endfor %}
+	<br>
+	
+	
+		
+		<input type="submit" name="submit" style="color: black"><br>
+	</FORM>
+	</center>
+{% endblock %}

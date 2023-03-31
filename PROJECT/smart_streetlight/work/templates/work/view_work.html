@@ -1,0 +1,33 @@
+{% extends 'temp/employee_home.html' %}
+{% block base %}
+	<center>
+		<form method="post">
+        {% csrf_token %}
+
+			<table border="1">
+                <tr><th align="center" colspan="5"><h2 align="center" style="color: white" >WORK</h2></th><br></tr>
+
+				<tr>
+
+				<tr>
+{#					<th align="center" style="color:black;border: solid;background: white ">employee_id</th>#}
+					<th align="center" style="color:black;border: solid;background: white ">assigned_work</th>
+					<th align="center" style="color:black;border: solid;background: white ">AUTHORITY</th>
+					<th align="center" style="color:black;border: solid;background: white ">Status</th>
+
+				</tr>
+                {% for x in value %}
+				<tr>
+{#					<td style="border: solid;color: black">{{ x.e_id }}</td>#}
+					<td style="border: solid;color: black">{{ x.work }}</td>
+					<td style="border: solid;color: black">{{ x.auth.username }}</td>
+                    <td style="border: solid;color: black">{{ x.status }}</td>
+					<td style="border: solid;color: black"> <a href="{% url 'upstatus' idd=x.w_id %}">update</a></td>
+
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

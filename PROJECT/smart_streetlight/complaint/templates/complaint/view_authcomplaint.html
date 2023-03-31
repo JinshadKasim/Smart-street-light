@@ -1,0 +1,33 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+	<center>
+
+		<form>
+			<table border="1">
+              <tr><th align="center" colspan="3"><h2 align="center" style="color: black" >view complaint</h2></th><br></tr>
+
+				<tr>
+					<th align="center" style="color:black;border: solid;background: white ">complaint</th>
+					<th align="center" style="color:black;border: solid;background: white ">date</th>
+					<th align="center" style="color:black;border: solid;background: white ">username</th>
+
+{#					<td>time</td>#}
+
+
+				</tr>
+                {% for x in value %}
+				<tr>
+					<td style="border: solid;color: black">{{ x.complaint }}</td>
+					<td style="border: solid;color: black">{{ x.date }}</td>
+					<td style="border: solid;color: black">{{ x.u.username }}</td>
+                    <td style="border: solid;color: black" rowspan=""><a href="{% url 'postreply' idd=x.c_id %}">REPLY</a></td>
+{#					<td>{{ x.t }}</td>#}
+
+				</tr>
+                {% endfor %}
+
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

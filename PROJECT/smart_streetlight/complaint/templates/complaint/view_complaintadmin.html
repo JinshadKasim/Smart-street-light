@@ -1,0 +1,30 @@
+{% extends 'temp/adminhome.html' %}
+{% block base %}
+	<center>
+		<h2>complaint</h2>
+		<form>
+			<table border="1">
+               <tr><th align="center" colspan="3"><h2 align="center" style="color: black" >COMPLAINT</h2></th><br></tr>
+
+				<tr>
+				<tr>
+					<th align="center" style="color:black;border: solid;background: white ">complaint</th>
+					<th align="center" style="color:black;border: solid;background: white ">date</th>
+					<th align="center" style="color:black;border: solid;background: white ">username</th>
+
+
+				</tr>
+                {% for x in value %}
+				<tr>
+					<td style="border: solid;color: black">{{ x.complaint }}</td>
+					<td style="border: solid;color: black">{{ x.date }}</td>
+					<td style="border: solid;color: black">{{ x.u.username }}</td>
+                   <td style="border: solid;color: black"><a href="{% url 'comforward' idd=x.c_id %}">FORWARD</a></td>
+				</tr>
+                {% endfor %}
+
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

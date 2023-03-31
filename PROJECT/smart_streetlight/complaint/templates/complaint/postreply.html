@@ -1,0 +1,21 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+<form method="post">
+{% csrf_token %}
+	<center>
+
+
+				<td>Reply</td>
+        <br>
+        <br>
+
+
+		<textarea name="postreply" required="" style="color: black"></textarea>
+
+
+		<input type="submit" name="submit" style="color: black">
+	
+	</center>
+</form>
+
+{% endblock %}

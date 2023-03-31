@@ -1,0 +1,58 @@
+{% extends 'temp/adminhome.html' %}
+{% block base %}
+	<center>
+	<FORM method="post">
+        {% csrf_token %}
+{#        <h3>AUTHORITY REGISTRATION</h3>#}
+		<table>
+               <tr><th align="center" colspan="5"><h2 align="center" style="color: white" >Register Authority</h2></th><br></tr>
+
+				<tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Name
+				</th>
+				<td>	<input type="text" name="name" required="" style="color: black;font-style: normal">
+				</td>
+			</tr>
+            <tr>
+				<th align="center" style="color:black;background: white ">
+					Location
+				</th>
+				<td>	<input type="text" name="loc" required="" style="color: black;font-style: normal">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Contact Number
+				</th>
+				<td>
+						<input type="text" name="phone" required="" style="color: black;font-style: normal">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					E-mail
+				</th>
+				<td>
+						<input type="email" name="email" required="" style="color: black;font-style: normal">
+				</td>
+			</tr>
+			<tr>
+					<th align="center" style="color:black;background: white ">
+					Password
+				</th>
+				<td>
+					<input type="password" name="pass" required="" style="color: black">
+				</td>
+			</tr>
+			
+		</table>
+	<br>
+	
+	
+		
+		<input type="submit" name="submit" style="color: black"><br>
+	</FORM>
+	</center>
+{% endblock %}

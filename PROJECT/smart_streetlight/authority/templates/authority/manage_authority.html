@@ -1,0 +1,29 @@
+{% extends 'temp/adminhome.html' %}
+{% block base %}
+	<CENTER>
+<h2>MANAGE AUTHORITY</h2>
+<table border="1">
+   <tr><th align="center" colspan="6"><h2 align="center" style="color: white" >MANAGE AUTHORITY</h2></th><br></tr>
+
+				<tr>
+	<tr>
+		<th align="center" style="color:black;border: solid;background: white ">Name</th>
+		<th align="center" style="color:black;border: solid;background: white ">Location</th>
+		<th align="center" style="color:black;border: solid;background: white ">Email</th>
+		<th align="center" style="color:black;border: solid;background: white ">Contact Number</th>
+		<th align="center" style="color:black;border: solid;background: white "></th>
+		<th align="center" style="color:black;border: solid;background: white "></th>
+	</tr>
+    {% for x in value %}
+	<tr>
+		<td style="border: solid;color: black">{{ x.username }}</td>
+		<td style="border: solid;color: black">{{ x.location }}</td>
+		<td style="border: solid;color: black">{{ x.email }}</td>
+		<td style="border: solid;color: black">{{ x.contact_no }}</td>
+		<td style="border: solid;color: black"><a href="{% url 'updauth' idd=x.a_id %}">UPDATE</a></td>
+		<td style="border: solid;color: black"><a href="{% url 'dlt' idd=x.a_id %}">DELETE</a></td>
+	</tr>
+    {% endfor %}
+</table>
+</CENTER>
+{% endblock %}

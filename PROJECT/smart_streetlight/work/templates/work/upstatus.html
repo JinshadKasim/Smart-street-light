@@ -1,0 +1,11 @@
+{% extends 'temp/employee_home.html' %}
+{% block base %}
+	<form method="post">
+    {% csrf_token %}
+		Current Status:<br>
+		<textarea name="status" required="" style="color: black"></textarea ><br>
+		<input type="submit" name="submit" style="color: black">
+		<input type="reset" name="clear" style="color: black">
+	</form>
+
+{% endblock %}

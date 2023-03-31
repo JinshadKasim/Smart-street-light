@@ -1,0 +1,36 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+	<center>
+	<form method="post">
+
+        {% csrf_token %}
+
+	<table>
+          <tr><th align="center" colspan="5"><h2 align="center" style="color: black" >Employee Registration</h2></th><br></tr>
+
+				<tr>
+		<tr>
+			<th align="center" style="color:black;background: white ">NAME:</th>
+			<td><input type="text" name="empname" required="" style="color: black;"></td>
+		</tr>
+
+
+
+			<tr>
+				<th align="center" style="color:black;background: white ">E-MAIL:</th>
+				<td><input type="email" name="empemail" style="color: black"></td>
+			</tr>
+			<tr>
+				<th align="center" style="color:black;background: white ">PASSWORD:</th>
+				<td> <input type="password" name="emppassword" required=""style="color: black"></td>
+			</tr>
+		</table>
+		   <br>
+		<input type="submit" name="submit" style="color: black">
+		
+
+
+		
+	</form>
+</center>
+{% endblock %}

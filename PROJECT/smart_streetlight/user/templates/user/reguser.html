@@ -1,0 +1,66 @@
+{% extends 'temp/mainhome.html' %}
+{% block base %}
+<center>
+		<form method="post">
+
+            {% csrf_token %}
+			<table align="center">
+                 <tr><th align="center" colspan="3"><h2 align="center" style="color: black" >User Registration</h2></th><br></tr>
+
+				<tr>
+				<tr>
+					<th align="center" style="color:black;background: white ">
+						Name
+					</th>
+					<td style="color: black">
+						<input type="text" name="username" required="">
+					</td>
+
+				</tr>
+                <tr>
+					<th align="center" style="color:black;background: white ">
+						Address
+					</th>
+					<td style="color: black">
+						<input type="text" name="useraddress" required="">
+					</td>
+
+				</tr>
+				<tr>
+					<tr>
+					<th align="center" style="color:black;background: white ">
+							Number
+						</th>
+						<td style="color: black">
+							<input type="text" name="usernumber" required="">
+						</td>
+					</tr>
+                <tr>
+					<th align="center" style="color:black;background: white ">
+						Email
+					</th>
+					<td style="color: black">
+						<input type="email" name="usermail">
+					</td>
+                </tr>
+					<tr>
+						<th align="center" style="color:black;background: white ">Password</th>
+
+
+						<td style="color: black">
+							<input type="password" name="userpassword" required="">
+						</td>
+					</tr>
+
+				<tr>
+					<td style="color: black"><input type="submit" name="submituser"></td>
+					<td style="color: black"><input type="reset" name="reset"></td>
+				</tr>
+			</table>
+
+		</form>
+    </center>
+
+
+
+{% endblock %}

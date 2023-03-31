@@ -1,0 +1,21 @@
+{% extends 'temp/userhome.html' %}
+{% block base %}
+	<form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>
+COMPLAINT
+            </th>
+            <td>
+<textarea name="complaint" required="" style="color: black" rows="5" cols="20"> </textarea><br>
+            </td>
+            </tr>
+            <tr><td></td>
+                <td>
+<input type="submit" value="post" style="color: black">
+                </td>
+            </tr>
+            </table>
+</form>
+{% endblock %}

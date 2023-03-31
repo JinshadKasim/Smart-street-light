@@ -1,0 +1,21 @@
+{% extends 'temp/employee_home.html' %}
+{% block base %}
+	<center>
+		<h2>Status from Employee</h2>
+		<form>
+			<table border="1">
+				<tr>
+					<th align="center" style="color:black;border: solid;background: white ">status</th>
+					<th align="center" style="color:black;border: solid;background: white ">employee_id</th>
+				</tr>
+                {% for x in value %}
+				<tr>
+				<td style="border: solid;color: black">{{ x.status }}</td>
+				<td style="border: solid;color: black">{{ x.employee_id }}</td>
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

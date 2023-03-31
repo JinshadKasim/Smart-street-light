@@ -1,0 +1,25 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+	<center>
+		<h2>STREETLIGHT REQUEST</h2>
+		<form>
+			<table border="1">
+				<tr>
+				<th align="center" style="color:black;border: solid;background: white ">location</th>
+					<th align="center" style="color:black;border: solid;background: white ">username</th>
+					<th align="center" style="color:black;border: solid;background: white ">request</th>
+					
+				</tr>
+                {% for x in value %}
+				<tr>
+					<td style="border: solid;color: black">{{ x.location }}</td>
+				<td style="border: solid;color: black">{{ x.u.username }}</td>
+					<td style="border: solid;color: black">{{ x.request }}</td>
+
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+{% endblock %}

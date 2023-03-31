@@ -1,0 +1,31 @@
+{% extends 'temp/authority_home.html' %}
+{% block base %}
+	<center>
+		<form>
+			<table border="1" align="center">
+              <tr><th align="center" colspan="5"><h2 align="center" style="color: black" >Work status</h2></th><br></tr>
+
+				<tr>
+				<tr>
+					<th align="center" style="color:black;border: solid;background: white ">employee</th>
+					<th align="center" style="color:black;border: solid;background: white ">assigned_work</th>
+{#                    <th align="center" style="color:black;border: solid;background: white ">employee_id</th>#}
+					<th align="center" style="color:black;border: solid;background: white ">Location</th>
+					<th align="center" style="color:black;border: solid;background: white ">Status</th>
+				</tr>
+                {% for x in value %}
+				<tr>
+					<td style="border: solid;color: black">{{ x.e.name }}</td>
+					<td style="border: solid;color: black">{{ x.work }}</td>
+{#                    <td>{{ x.e_id }}</td>#}
+					<td style="border: solid;color: black">{{ x.auth.location }}</td>
+                   <td style="border: solid;color: black">{{ x.status }}</td>
+{#					<td> <a href="">update</a></td>#}
+
+				</tr>
+                {% endfor %}
+			</table>
+		</form>
+	</center>
+
+{% endblock %}
